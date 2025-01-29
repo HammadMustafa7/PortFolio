@@ -22,6 +22,7 @@ export default function Particle() {
           particlesLoaded={particlesLoaded}
           style={{
             zIndex: -1,
+            width: "100vw",
             
             
           }}

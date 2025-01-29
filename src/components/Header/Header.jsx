@@ -67,7 +67,8 @@ function Header() {
 
     return (
         <>
-        <div className={`w-64  z-50 ${isMenuOpen ? "left-0 fixed" : "-left-[30rem] absolute"} transition-transform duration-700 ease-linear  bg-white top-0 lg:-left-[30rem] h-screen text-blue-700 flex flex-col items-center py-6`}>
+
+        <div className={`w-64  ${isMenuOpen ? "left-0 fixed z-50" : "-left-[30rem] absolute "} transition-transform duration-700 ease-linear  bg-white top-0 lg:-left-[30rem] h-screen text-blue-700 flex flex-col items-center py-6`}>
                     {/* Logo Section */}
                     <div className="mb-8 pb-5 px-2 w-full justify-between flex flex-row border-b-2 border-blue-500 items-center space-x-6">
 
@@ -145,7 +146,7 @@ function Header() {
                         />
                     </div>
                 </div>
-            <header className={`shadow h-[6rem] sm:h-[6rem] font-saira transform transition-transform ease-linear delay-300  cursor-none ${scrolled ? "fixed" : "absolute"} box-border w-full  flex justify-between items-center transition ease-in-out  top-0  ${scrolled ? "z-[99]" : "z-0"} ${scrolled ? "bg-white" : "bg-transparent !important "} transition-all ease-in-out delay-200
+            <header className={`shadow h-[6rem] border-b-2  sm:h-[6rem] font-saira transform transition-transform ease-linear delay-300  cursor-none ${scrolled ? "fixed" : "absolute"} box-border w-full  flex justify-between items-center transition ease-in-out  top-0  ${scrolled ? "z-[99]" : "z-0"} ${scrolled ? "bg-black" : "bg-transparent !important "} transition-all ease-in-out delay-200
         `}>
                 
                 <nav className="flex justify-between items-center w-full px-2 sm:px-7 md:px-12 lg:px-20 xl:px-28 ">
@@ -193,7 +194,7 @@ function Header() {
                   ${(isActive && scrolled) || (isActive && !scrolled)
                                                 ? "text-blue-700" // Active, regardless of scroll state
                                                 : scrolled
-                                                    ? "text-black" // Scrolled
+                                                    ? "text-white" // Scrolled
                                                     : "text-white" // Not scrolled
                                             }
                     md:hover:bg-transparent md:border-0  hover:text-blue-700 `

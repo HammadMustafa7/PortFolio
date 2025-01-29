@@ -20,6 +20,11 @@ export default {
         rotateme: "rotateme 5s linear infinite",
         typewriter: 'typewriter 6s steps(50, end) forwards 2s 1000 alternate',
         caret: 'typewriter 6s steps(50, end) forwards 2s 1000 alternate, blink 1s steps(50, end) infinite 2s',
+        drop: "drop 7s cubic-bezier(0.4, 0.26, 0, 0.97) infinite",
+      },
+      spacing: {
+        "animation-delay-[2s]": "2s",
+        "animation-delay-[2.5s]": "2.5s",
       },
       keyframes: {
         rotateme: {
@@ -57,7 +62,11 @@ export default {
           '50%': {
             transform: 'translate(10px)',
           },
-        }
+        },
+        drop: {
+          "0%": { top: "110%" },
+          "100%": { top: "-50%" },
+        },
       },
     },
   },
@@ -72,6 +81,7 @@ export default {
         },
       });
     }),
+    require("tailwindcss-animation-delay"), // Add animation delay plugin for flexibility
   ],
 }  
 

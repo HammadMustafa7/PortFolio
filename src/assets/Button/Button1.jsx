@@ -132,7 +132,7 @@ const StyledWrapper = styled.div`
   }
 
   .cssbuttons-io span {
-    padding: 0.6em 1em;
+    padding: 0.4em 1em;
   }
 
   .cssbuttons-io svg {
@@ -143,11 +143,11 @@ const StyledWrapper = styled.div`
 @media (max-width: 360px) {
   .cssbuttons-io {
     font-size: 12px;
-    padding: 0.5em 0.4em;
+    padding: 0.4em 0.4em;
   }
 
   .cssbuttons-io span {
-    padding: 0.6em 1em;
+    padding: 0.5em 1em;
   }
 
   .cssbuttons-io svg {

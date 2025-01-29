@@ -13,7 +13,7 @@ function HomePage() {
   ]
   return (
     <div className='overflow-hidden '>
-      {/* <Particle /> */}
+      <Particle />
 
 <div className='flex items-center py-30 px-3 lg:px-12 lg:pr-6 xl:pr-16 bg-black'>
       <div className=" flex  md:flex-row w-full lg:w-1/2 flex-col-reverse max-w-screen min-h-screen justify-center md:justify-start items-start md:items-center ">
@@ -69,10 +69,6 @@ function HomePage() {
     </div>
     </div>
 
-      <div className="w-screen relative h-screen bg-white "></div>
-      <div className="w-screen relative h-screen bg-yellow-500 "></div>
-      <div className="w-screen relative h-screen bg-orange-500 "></div>
-      <div className="w-screen relative h-screen bg-blue-500 "></div>
     </div>
   )
 }
