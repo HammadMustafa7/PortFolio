@@ -14,10 +14,10 @@ function CursorFollower() {
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("touchmove", handleTouchMove);
-    return () =>
-      { window.removeEventListener("mousemove", handleMouseMove);
-        window.removeEventListener("touchmove", handleTouchMove);
-      }
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
+    }
   }, []);
 
   return (
@@ -38,7 +38,6 @@ function CursorFollower() {
           backgroundColor: "#fff", // Fixed color syntax
         }}
       >
-
       </div>
     </div >
   );
