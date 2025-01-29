@@ -14,7 +14,6 @@ function HomePage() {
   return (
     <div className='overflow-hidden '>
       <Particle />
-
 <div className='flex items-center py-30 px-3 lg:px-12 lg:pr-6 xl:pr-16 bg-black'>
       <div className=" flex  md:flex-row w-full lg:w-1/2 flex-col-reverse max-w-screen min-h-screen justify-center md:justify-start items-start md:items-center ">
         <ul className=" pt-10 md:pt-0 md:mt-0  flex w-[80%] xsm:w-[60%] sm:w-[55%] md:w-[7rem] h-8  md:h-[14rem] flex-row md:flex-col gap-2 md:gap-0 justify-between items-center">
