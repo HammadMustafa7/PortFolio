@@ -3,7 +3,7 @@ import Button1 from '../../assets/Button/Button1'
 
 function About() {
     return (
-        <div className="relative flex flex-col md:flex-row min-h-screen  justify-around items-center py-14 md:py-8 bg-[#030303]">
+        <div id='about' className="relative flex flex-col md:flex-row min-h-screen  justify-around items-center py-14 md:py-8 bg-[#030303]">
             {/* "About Me" Title */}
             <h1 className="text-center text-[2rem] sm:text-[2.9rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[3.7rem] 2xl:text-[3.9rem] 
                    text-blue-700 font-bold md:rotate-90 w-max">
@@ -11,7 +11,7 @@ function About() {
             </h1>
 
             {/* Info Section */}
-            <div className="flex flex-col pl-3 justify-center items-center md:items-start gap-3 md:gap-4 w-full flex-1 pt-16 md:pt-3">
+            <div className="flex flex-col pl-3 justify-center items-center md:items-start gap-3 md:gap-4 w-full flex-1 pt-10 xsm:pt-16 md:pt-3">
                 <h1 className="text-white text-2xl md:text-4xl font-bold ">Mahmood Ahmad</h1>
                 <h1 className="text-white text-2xl md:text-4xl font-bold ">20 Years Old</h1>
                 <h1 className="text-white text-xl md:text-3xl font-bold">

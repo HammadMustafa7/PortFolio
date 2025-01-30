@@ -12,7 +12,7 @@ function HomePage() {
     ["Instagram", "www.instagram.com/mahmood_ahmad"],
   ]
   return (
-    <div className='overflow-hidden '>
+    <div id='home' className='overflow-hidden '>
       <Particle />
 <div className='flex items-center py-30 px-3 lg:px-12 lg:pr-6 xl:pr-16 bg-black'>
       <div className=" flex  md:flex-row w-full lg:w-1/2 flex-col-reverse max-w-screen min-h-screen justify-center md:justify-start items-start md:items-center ">

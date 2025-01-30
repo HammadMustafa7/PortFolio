@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 import Button1 from "../../assets/Button/Button1"
-import CursorFollower from "../Mouse_Cursor/Mousecursor";
 
 
 function Header() {
 
     const menuItems = [
-        ["Home", ""],
-        ["About Me", "about"],
+        ["Home", "home"],
+        ["About", "about"],
         ["Projects", "projects"],
         ["Contact", "contact"],
-    ]
+    ];
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -68,11 +67,11 @@ function Header() {
     return (
         <>
 
-            <div className={`w-64  ${isMenuOpen ? "left-0 fixed z-50" : "-left-[30rem] absolute "} transition-transform duration-700 ease-linear  bg-white top-0 lg:-left-[30rem] h-screen text-blue-700 flex flex-col items-center py-6`}>
+            <div className={`w-64  ${isMenuOpen ? "left-0 fixed z-[9999]" : "-left-[30rem] absolute "}  transition-transform duration-700 ease-linear  bg-white top-0 lg:-left-[30rem] h-screen text-blue-700 flex flex-col items-center py-6`}>
                 {/* Logo Section */}
                 <div className="mb-8 pb-5 px-2 w-full justify-between flex flex-row border-b-2 border-blue-500 items-center space-x-6">
 
-                    <NavLink to="/" className="flex items-center justify-center">
+                    <a href="/" className="flex items-center justify-center">
                         {/* Adjust the font size dynamically according to your Name */}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +94,7 @@ function Header() {
                                 Mahmood
                             </text>
                         </svg>
-                    </NavLink>
+                    </a>
 
                     <div className="flex items-center justify-end  h-12 w-full"
                         onClick={handleMenuToggle}
@@ -117,23 +116,23 @@ function Header() {
                 <ul className={`flex flex-col items-start w-full  space-y-2  transform transition-transform duration-700 `}>
                     {menuItems.map(([text, link], index) => (
                         <li key={index} className="w-full">
-                            <NavLink
-                                to={`/${link}`}
-                                className={({ isActive }) =>
-                                    `block w-full border-b-[1px] py-2 px-2 text-base font-semibold transform transition-transform duration-200
-              ${(isActive && scrolled) || (isActive && !scrolled)
-                                        ? "text-blue-700" // Active, regardless of scroll state
-                                        : scrolled
-                                            ? "text-black" // Scrolled
-                                            : "text-black" // Not scrolled
-                                    }
-              ${isMenuOpen ? "translate-y-0" : "translate-y-full"}
-              ${index != menuItems.length - 1 ? "border-black opacity-70" : "border-transparent"}
-                `
-                                }
+                            <Link
+                                to={link}
+                                smooth={true}
+                                duration={500}
+                                offset={-70}
+                                onClick={()=> {
+                                    setIsMenuOpen(!isMenuOpen)
+                                    setIsClicked(!isClicked)
+                                }}
+                                activeClass="text-blue-700"
+                                className={`block w-full border-b-[1px] py-2 px-2 text-base font-semibold transform transition-transform duration-200
+    ${scrolled ? "text-black" : "text-black"} 
+    ${isMenuOpen ? "translate-y-0" : "translate-y-full"}
+    ${index !== menuItems.length - 1 ? "border-black opacity-70" : "border-transparent"}`}
                             >
                                 {text}
-                            </NavLink>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -146,13 +145,13 @@ function Header() {
                     />
                 </div>
             </div>
-            <header className={`shadow h-[6rem] border-b-2  sm:h-[6rem] font-saira transform transition-transform ease-linear delay-300  cursor-none ${scrolled ? "fixed" : "absolute"} box-border w-full  flex justify-between items-center transition ease-in-out  top-0  ${scrolled ? "z-[99]" : "z-0"} ${scrolled ? "bg-black" : "bg-transparent !important "} transition-all ease-in-out delay-200
+            <header className={`shadow h-[6rem] border-b-2  sm:h-[6rem] font-saira transform transition-transform ease-linear delay-300  cursor-none ${scrolled ? "fixed" : "absolute"} ${isMenuOpen ? "z-0" : "z-50"} box-border w-full  flex justify-between items-center transition ease-in-out  top-0  ${scrolled ? "z-[99]" : "z-0"} ${scrolled ? "bg-black" : "bg-transparent !important "} transition-all ease-in-out delay-200
         `}>
 
                 <nav className="flex justify-between items-center w-full px-2 sm:px-7 md:px-12 lg:px-20 xl:px-28 ">
                     {/* Logo */}
                     <div>
-                        <Link to="/" className="flex  items-center">
+                        <a href="/" className="flex  items-center">
                             {/* Adjust the font size dynamically according to your Name */}
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +174,7 @@ function Header() {
                                     Mahmood
                                 </text>
                             </svg>
-                        </Link>
+                        </a>
                     </div>
 
 
@@ -186,22 +185,17 @@ function Header() {
                         <ul className="flex flex-col gap-5  items-center mt-4 font-medium md:flex-row md:space-x-6 md:mt-0">
                             {menuItems.map(([text, link], index) => (
                                 <li key={index} className="py-7">
-                                    <NavLink
+                                    <Link
                                         onClick={handleNavigation}
-                                        to={`/${link}`}
-                                        className={({ isActive }) =>
-                                            `block h-full  duration-200  text-lg py-4 lg:text-xl border-b border-gray-700
-                  ${(isActive && scrolled) || (isActive && !scrolled)
-                                                ? "text-blue-700" // Active, regardless of scroll state
-                                                : scrolled
-                                                    ? "text-white" // Scrolled
-                                                    : "text-white" // Not scrolled
-                                            }
-                    md:hover:bg-transparent md:border-0  hover:text-blue-700 `
-                                        }
+                                        to={link}
+                                        smooth={true}
+                                        duration={500}
+                                        activeClass="text-blue-700" // Correct way to apply styles when active
+                                        className={`block h-full duration-200 text-lg py-4 lg:text-xl border-b border-gray-700
+    ${scrolled ? "text-white" : "text-white"} md:hover:bg-transparent md:border-0 hover:text-blue-700`}
                                     >
                                         {text}
-                                    </NavLink>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -232,14 +226,14 @@ function Header() {
                                 <div className="relative w-8 h-6 flex gap-1 flex-col justify-center">
                                     <span
                                         className={`block h-1 bg-blue-700 transition-all duration-200 ease-in-out rounded-md ${isClicked
-                                                ? "w-8 absolute top-1/2 -translate-y-1/2 rotate-45"
-                                                : "w-8"
+                                            ? "w-8 absolute top-1/2 -translate-y-1/2 rotate-45"
+                                            : "w-8"
                                             }`}
                                     />
                                     <span
                                         className={`block h-1 bg-white transition-all duration-200 ease-in-out rounded-md ${isClicked
-                                                ? "w-8 absolute top-1/2 -translate-y-1/2 -rotate-45"
-                                                : "w-6"
+                                            ? "w-8 absolute top-1/2 -translate-y-1/2 -rotate-45"
+                                            : "w-6"
                                             }`}
                                     />
                                 </div>
