@@ -35,7 +35,7 @@ const StyledWrapper = styled.div`
     font-size: 18px;
     letter-spacing: 0.05em;
     border-radius: 0.8em;
-    cursor: pointer;
+    cursor: none;
     border: none;
     background: linear-gradient(to right, #4a00e0, #dcdfe3);
     color: ghostwhite;

@@ -14,6 +14,7 @@ export default {
       },
       fontFamily: {
         saira: ['"Saira"', 'sans-serif'], // Add Saira font
+        shadows: ['Shadows Into Light', 'cursive'], //Shadows Font
       },
       animation: {
         bounce2: 'bounce2 2s infinite',
