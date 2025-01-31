@@ -169,9 +169,9 @@ useEffect(() => {
   const visibleProjects = showAll ? projects : projects.slice(0, projectsPerRow);
 
   return (
-    <div id='projects' className=" relative min-h-screen bg-black py-8 p-6 lg:p-8">
+    <div id='projects' className=" font-saira1 relative min-h-screen bg-black py-8 p-6 lg:p-8">
       <div className="max-w-full mx-auto">
-        <h1 className="text-4xl font-bold text-blue-700 lg:pt-16 mb-12 text-center">My Projects</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-blue-700 lg:pt-16 mb-12 md:mb-16 text-center">My Projects</h1>
         
         <div className={`flex flex-wrap justify-center  gap-6 lg:gap-8`}>
           {visibleProjects.map((project, index) => (

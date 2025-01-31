@@ -3,7 +3,7 @@ import Button1 from '../../assets/Button/Button1'
 
 function About() {
     return (
-        <div id='about' className="relative flex flex-col md:flex-row min-h-screen  justify-around items-center py-14 md:py-8 bg-[#030303]">
+        <div id='about' className="relative font-saira flex flex-col md:flex-row min-h-screen  justify-around items-center py-14 md:py-8 bg-[#030303]">
             {/* "About Me" Title */}
             <h1 className="text-center text-[2rem] sm:text-[2.9rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[3.7rem] 2xl:text-[3.9rem] 
                    text-blue-700 font-bold md:rotate-90 w-max">
@@ -17,9 +17,7 @@ function About() {
                 <h1 className="text-white text-xl md:text-3xl font-bold">
                     From: <span className="text-blue-700">Lahore, Pakistan</span>
                 </h1>
-                {/* <h1 className="text-white text-xl md:text-3xl font-bold text-center md:text-start">
-                    Education: <span className="text-blue-700">BSCS - Virtual University of Pakistan</span>
-                </h1> */}
+
                 <p className="text-white text-xl md:text-2xl font-bold text-center md:text-start pt-4">
                     A passionate <span className='text-blue-700 font-shadows'> Android Developer</span> with expertise in building modern, high-performing applications.
                 </p>

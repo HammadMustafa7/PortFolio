@@ -3,6 +3,7 @@ import Particle from '../Particle/Particle';
 import RotatingDashedBox from '../RotatingDashedBox/RotatingDashedBox';
 import Button1 from '../../assets/Button/Button1';
 import heroImage from '../../assets/Images/hero-image2.png'; 
+import { Link } from "react-scroll";
 
 function HomePage() {
 
@@ -20,7 +21,7 @@ function HomePage() {
           {AppsLinks.map((app, index) => (
             <li
               key={index}
-              className="relative pl-2.5 md:pl-4 transform  md:-rotate-90 flex justify-center items-center"
+              className="relative pl-3.5 md:pl-4 transform  md:-rotate-90 flex justify-center items-center"
             >
               <RotatingDashedBox />
               <a
@@ -49,7 +50,7 @@ function HomePage() {
           <div className='flex flex-row gap-3 sm:gap-5 mt-8'>
             <Button1
              txt={"About"}
-            link={"https://www.linkedin.com/in/mahmood-ahmad-8b1b19252"}
+            link={"about"}
             hide='block'
             />
             <Button1 txt={"Curriculum vitae"}
