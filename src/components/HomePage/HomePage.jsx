@@ -2,7 +2,7 @@ import React from 'react'
 import Particle from '../Particle/Particle';
 import RotatingDashedBox from '../RotatingDashedBox/RotatingDashedBox';
 import Button1 from '../../assets/Button/Button1';
-import heroImage from '../../assets/Images/hero-image2.png';
+import heroImage from '/Images/hero-image2.png';
 
 function HomePage() {
   const AppsLinks = [
