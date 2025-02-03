@@ -25,7 +25,7 @@ function ContactForm() {
 
     if (data.success) {
       setLoading(false);
-      setResult("✅ Form Submitted Successfully!");
+      setResult("✅ Sent");
       event.target.reset();
 
       setInterval(() => {
