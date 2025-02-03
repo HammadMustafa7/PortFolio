@@ -1,4 +1,3 @@
-import React from 'react'
 import Button1 from '../../assets/Button/Button1'
 
 function About() {

@@ -1,8 +1,7 @@
-import React from 'react'
 import Particle from '../Particle/Particle';
 import RotatingDashedBox from '../RotatingDashedBox/RotatingDashedBox';
 import Button1 from '../../assets/Button/Button1';
-import heroImage from '/Images/hero-image2.png';
+import heroImage from '/hero-image2.png';
 
 function HomePage() {
   const AppsLinks = [
@@ -52,7 +51,7 @@ function HomePage() {
             hide='block'
             />
             <Button1 txt={"Curriculum vitae"}
-            link={"./MahmoodAhmad-Resume.pdf"}
+            link={"/MahmoodAhmad-Resume.pdf"}
             hide='block'
             />
           </div>

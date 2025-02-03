@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Github, ArrowRight, ChevronDown, Play } from 'lucide-react';
 
 const ProjectsPage = () => {

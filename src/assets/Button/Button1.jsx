@@ -1,11 +1,11 @@
-import React,{ useState , useEffect} from "react";
+import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import styled from "styled-components";
 
-function Button1({ txt="Click Me", link="#", hide = "hidden" }) {
+// Define default prop values using destructuring
+function Button1({ txt = "Click Me", link = "#", hide = "hidden" }) {
   const isExternal = link.startsWith("http") || link.startsWith("www") || link.endsWith(".pdf");
 
-  
   // State to track hover effect
   const [isHovered, setIsHovered] = useState(false);
 
@@ -20,14 +20,12 @@ function Button1({ txt="Click Me", link="#", hide = "hidden" }) {
     setIsHovered(true);
   };
 
-  
-
   return (
     <StyledWrapper>
       <button 
-      className={`cssbuttons-io font-saira ${isHovered ? "hovered" : ""}`}
-      onTouchEnd={handleTouchEnd} // Attach the touchend event
-      onTouchStart={handleTouchStart} // Optionally track touchstart if you want to trigger hover on touch start
+        className={`cssbuttons-io font-saira ${isHovered ? "hovered" : ""}`}
+        onTouchEnd={handleTouchEnd} // Attach the touchend event
+        onTouchStart={handleTouchStart} // Optionally track touchstart if you want to trigger hover on touch start
       >
         {isExternal ? (
           <a href={link} target="_blank" rel="noopener noreferrer">
@@ -61,6 +59,11 @@ function Button1({ txt="Click Me", link="#", hide = "hidden" }) {
   );
 }
 
+Button1.propTypes = {
+  txt: "Click Me",
+  link: "#",
+  hide: "hidden",
+};
 
 
 const StyledWrapper = styled.div`

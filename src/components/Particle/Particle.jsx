@@ -11,7 +11,7 @@ export default function Particle() {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
+  const particlesLoaded = () => {
   };
 
   return (
