@@ -1,34 +1,38 @@
 import { useEffect, useState } from "react";
-import Particles from "@tsparticles/react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
-
 export default function Particle() {
   const [init, setInit] = useState(false);
-
   useEffect(() => {
-    // Initialize the particles engine when the component mounts
-    loadFull().then(() => {
+    initParticlesEngine(async (engine) => {
+      await loadFull(engine);
+    }).then(() => {
       setInit(true);
     });
   }, []);
+
+  const particlesLoaded = (container) => {
+  };
 
   return (
     <>
       {init && (
         <Particles
           id="tsparticles"
+          particlesLoaded={particlesLoaded}
           style={{
             zIndex: -1,
             width: "100vw",
-            height: "100vh", // Ensure full height for the particles
+            
+            
           }}
           options={{
             autoplay: true,
             background: {
-              color: {
-                value: "transparent",
+                color: {
+                  value: "transparent",
+                },
               },
-            },
             fpsLimit: 120,
             interactivity: {
               events: {
