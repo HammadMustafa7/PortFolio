@@ -41,7 +41,7 @@ function HomePage() {
             <h1 className="text-black  text-stroke-white text-2xl xxsm:text-3xl sm:text-5xl lg:text-5xl font-bold font-saira">
               Android Developer
             </h1>
-            <h2 class="relative mt-4 md:mt-6 w-[max-content] max-w-[52.5rem]  font-saira text-white text-[0.80rem] sm:text-sm  md:text-xl xl:text-2xl  before:absolute before:inset-0 before:animate-typewriter before:bg-black after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-white">
+            <h2 className="relative mt-4 md:mt-6 w-[max-content] max-w-[52.5rem]  font-saira text-white text-[0.80rem] sm:text-sm  md:text-xl xl:text-2xl  before:absolute before:inset-0 before:animate-typewriter before:bg-black after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-white">
               {`Passionate about building mobile apps that solve problems. ..`}
             </h2>
           </div>

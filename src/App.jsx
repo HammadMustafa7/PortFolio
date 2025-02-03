@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false); // Hide loading after 3 seconds
-    }, 3000);
+    }, 2000);
   }, []);
   return (
     <>

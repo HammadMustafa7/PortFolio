@@ -2,7 +2,7 @@ import React,{ useState , useEffect} from "react";
 import { Link as ScrollLink } from "react-scroll";
 import styled from "styled-components";
 
-function Button1({ txt, link, hide = "hidden" }) {
+function Button1({ txt="Click Me", link="#", hide = "hidden" }) {
   const isExternal = link.startsWith("http") || link.startsWith("www") || link.endsWith(".pdf");
 
   
@@ -61,10 +61,7 @@ function Button1({ txt, link, hide = "hidden" }) {
   );
 }
 
-Button1.defaultProps = {
-  txt: "Click Me",
-  link: "#",
-};
+
 
 const StyledWrapper = styled.div`
   .cssbuttons-io {

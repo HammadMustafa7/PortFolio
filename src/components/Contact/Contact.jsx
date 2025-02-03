@@ -61,7 +61,7 @@ function ContactForm() {
 
           <div className="flex flex-col gap-0.5">
             <label htmlFor="message" className="text-gray-300">Message</label>
-            <textarea name="message" required placeholder="Type your message here" maxlength="700"
+            <textarea name="message" required placeholder="Type your message here" maxLength="700"
               className="py-2 px-3 w-full border border-gray-600 rounded bg-gray-800 text-white outline-none h-32 resize-none"></textarea>
           </div>
 
