@@ -2,14 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/',
+  base: '/',  // Ensure this is correct for your deployment path
   plugins: [react()],
   optimizeDeps: {
-    include: ['@tsparticles/react'],  // Ensure it's bundled properly
-  },
-  build: {
-    rollupOptions: {
-      external: ['react-router-dom'],
-    },
+    include: ['@tsparticles/react', 'react-router-dom'],  // Make sure this includes all necessary packages
   },
 });
