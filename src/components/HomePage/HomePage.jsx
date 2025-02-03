@@ -52,7 +52,7 @@ function HomePage() {
             hide='block'
             />
             <Button1 txt={"Curriculum vitae"}
-            link={`/PortFolio/PDFs/MahmoodAhmad-Resume.pdf`}
+            link={"./MahmoodAhmad-Resume.pdf"}
             hide='block'
             />
           </div>
