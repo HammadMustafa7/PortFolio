@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Github, ArrowRight, ChevronDown } from 'lucide-react';
+import { Github, ArrowRight, ChevronDown, Play } from 'lucide-react';
 
 const ProjectsPage = () => {
   const [showAll, setShowAll] = useState(false);
@@ -34,7 +34,12 @@ const ProjectsPage = () => {
 
   ];
   const live_projects = [
-
+    {
+      title: "Weather Dashboard",
+      description: "Real-time weather monitoring application that provides detailed forecasts and historical weather data visualization.",
+      image: "/api/placeholder/400/250",
+      github: "https://github.com/username/weather-dashboard"
+    },
   ];
 
   // Calculate how many projects to show in one row (20% width means 5 per row)
@@ -163,8 +168,8 @@ const ProjectsPage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github size={24} />
-                    <span>View on GitHub</span>
+                    <Play  size={24} />
+                    <span>View on Playstore</span>
                     <div className='rounded-full p-1.5'>
                       <ArrowRight size={20} />
                     </div>
