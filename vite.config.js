@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['react-router-dom'] // This is unlikely needed unless you're externally linking it
-    }
-  }
+      external: ['react-router-dom', '@tsparticles/react'], // Add @tsparticles/react here
+    },
+  },
 });
