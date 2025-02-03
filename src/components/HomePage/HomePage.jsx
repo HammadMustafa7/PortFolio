@@ -50,7 +50,7 @@ function HomePage() {
             link={"about"}
             hide='block'
             />
-            <Button1 txt={"Curriculum vitae"}
+            <Button1 txt={"My Resume"}
             link={"/MahmoodAhmad-Resume.pdf"}
             hide='block'
             />
