@@ -1,13 +1,34 @@
-import React from "react";
+import React,{ useState , useEffect} from "react";
 import { Link as ScrollLink } from "react-scroll";
 import styled from "styled-components";
 
 function Button1({ txt, link, hide = "hidden" }) {
-  const isExternal = link.startsWith("http") || link.startsWith("www");
+  const isExternal = link.startsWith("http") || link.startsWith("www") || link.endsWith(".pdf");
+
+  
+  // State to track hover effect
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleTouchEnd = () => {
+    // Remove hover effect when touch ends
+    setIsHovered(false);
+    console.log("Touch ended, hover effect removed!");
+  };
+
+  const handleTouchStart = () => {
+    // Optionally, you can add a touch start effect or keep it active
+    setIsHovered(true);
+  };
+
+  
 
   return (
     <StyledWrapper>
-      <button className="cssbuttons-io font-saira">
+      <button 
+      className={`cssbuttons-io font-saira ${isHovered ? "hovered" : ""}`}
+      onTouchEnd={handleTouchEnd} // Attach the touchend event
+      onTouchStart={handleTouchStart} // Optionally track touchstart if you want to trigger hover on touch start
+      >
         {isExternal ? (
           <a href={link} target="_blank" rel="noopener noreferrer">
             <span>
@@ -22,7 +43,7 @@ function Button1({ txt, link, hide = "hidden" }) {
             </span>
           </a>
         ) : (
-          <ScrollLink to={link} smooth={true} duration={500}>
+          <ScrollLink to={link} smooth={true} duration={500} delay={100} ignoreCancelEvents={false}>
             <span>
               <svg className={`${hide}`} viewBox="0 0 28 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -104,6 +125,14 @@ const StyledWrapper = styled.div`
 
   }
 
+    .cssbuttons-io.hovered {
+    color: black; // changes text color on hover
+  }
+
+  .cssbuttons-io.hovered::before {
+    transform: skew(90deg, 0);
+  }
+
   .cssbuttons-io:active {
     transform: scale(0.95);
   }
@@ -175,7 +204,9 @@ const StyledWrapper = styled.div`
 }
 
 
+}
+
+
 `;
 
 export default Button1;
-

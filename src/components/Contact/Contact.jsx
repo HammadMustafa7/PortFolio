@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Alert from '@mui/material/Alert';
+
 
 function ContactForm() {
   const [result, setResult] = useState("");
@@ -24,7 +26,6 @@ function ContactForm() {
     if (data.success) {
       setLoading(false);
       setResult("✅ Form Submitted Successfully!");
-      alert("Form submitted successfully!");
       event.target.reset();
 
       setInterval(() => {
@@ -42,7 +43,7 @@ function ContactForm() {
 
   return (
     <>
-    <div id="contact" className="relative w-full min-h-screen bg-black flex flex-col gap-6 md:gap-0 md:flex-row justify-center  items-center font-saira lg:px-8">
+    <div id="contact" className="relative w-full h-max bg-black flex flex-col gap-6 md:gap-0 md:flex-row justify-center  items-center font-saira py-16   md:px-10">
     <h1 className="text-center text-[2rem] sm:text-[2.9rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[3.7rem] 2xl:text-[3.9rem] text-blue-700 font-bold md:rotate-90 w-[20]">Contact Me</h1>
       <div className="w-[80%] max-w-lg  bg-transparent border border-white p-6 rounded-lg shadow-lg">
         <form className="flex  flex-col gap-4" onSubmit={onSubmit}>

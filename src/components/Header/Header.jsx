@@ -115,13 +115,13 @@ function Header() {
                 {/* Navigation Links */}
                 <ul className={`flex flex-col items-start w-full  space-y-2  transform transition-transform duration-700 `}>
                     {menuItems.map(([text, link], index) => (
-                        <li key={index} className="w-full">
+                        <li key={index} className="w-full cursor-pointer">
                             <Link
                                 to={link}
                                 smooth={true}
                                 duration={500}
                                 offset={-70}
-                                onClick={()=> {
+                                onClick={() => {
                                     setIsMenuOpen(!isMenuOpen)
                                     setIsClicked(!isClicked)
                                 }}
@@ -138,14 +138,14 @@ function Header() {
                 </ul>
                 <div className="sm:hidden block mt-10">
                     <Button1
-                        className="cursor-none"
+                        className=""
                         txt="GitHub"
-                        link={"https://github.com/HammadMustafa7"}
+                        link={"https://github.com/MahmoodAhmad648"}
                         hide="block"
                     />
                 </div>
             </div>
-            <header className={`shadow h-[6rem] border-b-2  sm:h-[6rem] font-saira transform transition-transform ease-linear delay-300  cursor-none ${scrolled ? "fixed" : "absolute"} ${isMenuOpen ? "z-0" : "z-50"} box-border w-full  flex justify-between items-center transition ease-in-out  top-0  ${scrolled ? "z-[99]" : "z-0"} ${scrolled ? "bg-black" : "bg-transparent !important "} transition-all ease-in-out delay-200
+            <header className={`shadow h-[6rem] border-b-2  sm:h-[6rem] font-saira transform transition-transform ease-linear delay-300   ${scrolled ? "fixed" : "absolute"} ${isMenuOpen ? "z-0" : "z-50"} box-border w-full  flex justify-between items-center transition ease-in-out  top-0  ${scrolled ? "z-[99]" : "z-0"} ${scrolled ? "bg-black" : "bg-black "} transition-all ease-in-out delay-200
         `}>
 
                 <nav className="flex justify-between items-center w-full px-2 sm:px-7 md:px-12 lg:px-20 xl:px-28 ">
@@ -184,7 +184,7 @@ function Header() {
                     >
                         <ul className="flex flex-col gap-5  items-center mt-4 font-medium md:flex-row md:space-x-6 md:mt-0">
                             {menuItems.map(([text, link], index) => (
-                                <li key={index} className="py-7">
+                                <li key={index} className="py-7 cursor-pointer">
                                     <Link
                                         onClick={handleNavigation}
                                         to={link}
@@ -205,14 +205,14 @@ function Header() {
                     <div className="flex items-center gap-6">
                         <div className="hidden sm:block ">
                             <Button1
-                                className="cursor-none "
+                                className=" "
                                 txt="GitHub"
-                                link={"https://github.com/HammadMustafa7"}
+                                link={"https://github.com/MahmoodAhmad648"}
                                 hide="block"
                             />
                         </div>
                         <div
-                            className="lg:hidden block w-8 h-8 cursor-none group items-center justify-center rounded-3xl mr-4  p-2"
+                            className="lg:hidden block w-8 h-8  group items-center justify-center rounded-3xl mr-4  p-2"
                             onClick={() => {
                                 handleMenuToggle();
                                 toggleTransform();
@@ -226,7 +226,7 @@ function Header() {
                                 <div className="relative w-8 h-6 flex gap-1 flex-col justify-center">
                                     <span
                                         className={`block h-1 bg-blue-700 transition-all duration-200 ease-in-out rounded-md ${isClicked
-                                            ? "w-8 absolute top-1/2 -translate-y-1/2 rotate-45"
+                                            ? "w-8 absolute z-10 top-1/2 -translate-y-1/2 rotate-45"
                                             : "w-8"
                                             }`}
                                     />

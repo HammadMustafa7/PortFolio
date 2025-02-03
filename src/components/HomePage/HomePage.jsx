@@ -2,15 +2,13 @@ import React from 'react'
 import Particle from '../Particle/Particle';
 import RotatingDashedBox from '../RotatingDashedBox/RotatingDashedBox';
 import Button1 from '../../assets/Button/Button1';
-import heroImage from '../../assets/Images/hero-image2.png'; 
-import { Link } from "react-scroll";
+import heroImage from '../../assets/Images/hero-image2.png';
 
 function HomePage() {
-
   const AppsLinks = [
-    ["Linkedin", "www.linkedin.com/in/mahmood-ahmad-8b1b19252"],
-    ["Github", "www.github.com/Mahmood-Ahmad"],
-    ["Instagram", "www.instagram.com/mahmood_ahmad"],
+    ["Linkedin", "https://www.linkedin.com/in/mahmood-ahmad-a6a234291"],
+    ["Github", "https://github.com/MahmoodAhmad648"],
+    ["Instagram", "https://www.instagram.com/mahmoodahmad08"],
   ]
   return (
     <div id='home' className='overflow-hidden '>
@@ -26,7 +24,7 @@ function HomePage() {
               <RotatingDashedBox />
               <a
                 className="font-saira text-white hover:text-blue-500 pl-1.5 transition-colors duration-200"
-                href={`https://${app[1]}`}
+                href={`${app[1]}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -54,17 +52,17 @@ function HomePage() {
             hide='block'
             />
             <Button1 txt={"Curriculum vitae"}
-            link={"https://drive.google.com/file/d/1tVqZ7hY2wQqf7Tt5wVl7Qy6s5t8x-6yN/view?usp=sharing"}
+            link={`/PortFolio/PDFs/MahmoodAhmad-Resume.pdf`}
             hide='block'
             />
           </div>
         </div>
       </div>
-      <div className=" hidden lg:flex xl:justify-items-end justify-end items-center h-[75vh] lg:w-10/12 xl:w-11/12 ">
+      <div className=" hidden lg:flex xl:justify-items-end  justify-end items-center h-[75vh] lg:w-10/12 xl:w-11/12 ">
       <img
         src={heroImage}
         alt="Hero Image"
-        className="animate-bounce2 h-auto w-8/12  object-cover max-w-[520px] object-center rounded-lg shadow-lg"
+        className="animate-bounce2 h-auto w-8/12 object-cover max-w-[48 0px]  object-center rounded-2xl shadow-lg "
       />
     </div>
     </div>
