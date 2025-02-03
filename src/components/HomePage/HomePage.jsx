@@ -46,7 +46,7 @@ function HomePage() {
           </div>
           <div className='flex flex-row gap-3 sm:gap-5 mt-8'>
             <Button1
-             txt={"About"}
+             txt={"About Me"}
             link={"about"}
             hide='block'
             />
