@@ -10,55 +10,86 @@ import Swal from "sweetalert2";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [isOnline, setIsOnline] = useState(true);
 
+  // Network status monitoring
   useEffect(() => {
-    // Function to show alert when internet goes offline
-    const handleOffline = () => {
-      if (!navigator.onLine) {
-        setIsOnline(false);
-        Swal.close(); // Close any open alert
+    // Function to check internet connection
+    const checkInternetConnection = () => {
+      if (navigator.onLine !== isOnline) {
+        handleNetworkChange(navigator.onLine);
+      }
+    };
+
+    // Function to handle status changes
+    const handleNetworkChange = (status) => {
+      setIsOnline(status);
+      if (!status) {
         Swal.fire({
           title: "No Internet!",
           text: "Please check your network connection and try again.",
           icon: "warning",
           confirmButtonText: "OK",
           confirmButtonColor: "#f59e0b",
-          customClass: { popup: "border-2 border-yellow-500 rounded-lg shadow-lg" },
+          customClass: {
+            popup: "border-2 border-yellow-500 rounded-lg shadow-lg"
+          },
+          allowOutsideClick: false,
+          allowEscapeKey: true,
+          allowEnterKey: false,
+          showConfirmButton: true
         });
-      }
-    };
-
-    // Function to show alert when internet comes back online
-    const handleOnline = () => {
-      if (navigator.onLine) {
-        setIsOnline(true);
-        Swal.close(); // Close any open alert
+      } else {
+        Swal.close();
         Swal.fire({
           title: "Back Online!",
           text: "Your internet connection is restored.",
           icon: "success",
           confirmButtonText: "OK",
           confirmButtonColor: "#22c55e",
-          customClass: { popup: "border-2 border-green-500 rounded-lg shadow-lg" },
+          customClass: {
+            popup: "border-2 border-green-500 rounded-lg shadow-lg"
+          },
+          allowOutsideClick: false,
+          allowEscapeKey: true,
+          allowEnterKey: false,
+          showConfirmButton: true
         });
       }
     };
 
-    // Add event listeners
-    window.addEventListener("offline", handleOffline);
-    window.addEventListener("online", handleOnline);
-
-    // Remove event listeners when component unmounts
-    return () => {
-      window.removeEventListener("offline", handleOffline);
-      window.removeEventListener("online", handleOnline);
+    // Handle offline event
+    const handleOffline = () => {
+      handleNetworkChange(false);
     };
-  }, []);
 
+    // Handle online event
+    const handleOnline = () => {
+      handleNetworkChange(true);
+    };
+
+    // Initial check
+    checkInternetConnection();
+
+    // Set up event listeners
+    window.addEventListener('offline', handleOffline);
+    window.addEventListener('online', handleOnline);
+
+    // Regular status check
+    const intervalId = setInterval(checkInternetConnection, 3000);
+
+    // Cleanup
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener('offline', handleOffline);
+      window.removeEventListener('online', handleOnline);
+    };
+  }, [isOnline]);
+
+  // Loading state
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false); // Hide loading after 2 seconds
+      setLoading(false);
     }, 2000);
   }, []);
 
